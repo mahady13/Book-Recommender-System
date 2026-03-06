@@ -27,16 +27,16 @@ if st.button('recommend'):
     col1,col2,col3,col4,col5=st.columns(5)
     with col1:
         st.image(posters[0])
-        st.text(names[0])
+        st.caption(names[0])
     with col2:
         st.image(posters[1])
-        st.text(names[1])
+        st.caption(names[1])
     with col3:
         st.image(posters[2])
-        st.text(names[2])
+        st.caption(names[2])
     with col4:
         st.image(posters[3])
-        st.text(names[3])
+        st.caption(names[3])
     with col5:
         st.image(posters[4])
-        st.text(names[4])
+        st.caption(names[4])
