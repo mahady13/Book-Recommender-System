@@ -9,7 +9,7 @@ similarity=pickle.load(open('similarity.pkl','rb'))
 def recommend(book):
     book_index=df[df['title']==book].index[0]
     distance=similarity[book_index]
-    book_list=sorted(list(enumerate(distance)),reverse=True,key=lambda x:x[1])[1:11]
+    book_list=sorted(list(enumerate(distance)),reverse=True,key=lambda x:x[1])[1:6]
     recommended=[]
     recommendposter=[]
     for i in book_list:
@@ -24,7 +24,7 @@ option= st.selectbox('Which book do you like?',df['title'].values)
 if st.button('recommend'):
     names,posters=recommend(option)
 
-    col1,col2,col3,col4,col5,col6,col7,col8,col9,col10=st.columns(10)
+    col1,col2,col3,col4,col5=st.columns(5)
     with col1:
         st.image(posters[0])
         st.text(names[0])
@@ -40,18 +40,3 @@ if st.button('recommend'):
     with col5:
         st.image(posters[4])
         st.text(names[4])
-    with col6:
-        st.image(posters[5])
-        st.text(names[5])
-    with col7:
-        st.image(posters[6])
-        st.text(names[6])
-    with col8:
-        st.image(posters[7])
-        st.text(names[7])
-    with col9:
-        st.image(posters[8])
-        st.text(names[8])
-    with col10:
-        st.image(posters[9])
-        st.text(names[9])
